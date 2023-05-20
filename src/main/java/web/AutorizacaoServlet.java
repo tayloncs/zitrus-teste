@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Objects;
 
+import static java.util.Objects.*;
+
 @WebServlet(urlPatterns = "")
 public class AutorizacaoServlet extends HttpServlet {
     private static final AutorizacaoService autorizacaoService = new AutorizacaoService();
@@ -22,7 +24,7 @@ public class AutorizacaoServlet extends HttpServlet {
         String idProcedimento = request.getParameter("idProcedimento");
         String idade = request.getParameter("idade");
         String sexo = request.getParameter("sexo");
-        if (Objects.nonNull(idProcedimento) && Objects.nonNull(idade) && Objects.nonNull(sexo)) {
+        if (nonNull(idProcedimento) && nonNull(idade) && nonNull(sexo)) {
             String resposta = validarProcedimento(Long.parseLong(idProcedimento), Integer.parseInt(idade), sexo);
             request.setAttribute("autorizacao", resposta);
         }
@@ -45,7 +47,7 @@ public class AutorizacaoServlet extends HttpServlet {
     private String validarProcedimento(Long idProcedimento, Integer idade, String sexo) {
         Autorizacao autorizacao = Autorizacao.builder().idProcedimento(idProcedimento).idade(idade).sexo(sexo).build();
         Autorizacao autorizacaoResponse = autorizacaoService.consultar(autorizacao);
-        if (Objects.nonNull(autorizacaoResponse)) {
+        if (nonNull(autorizacaoResponse)) {
             if (autorizacaoResponse.isPermitido()) {
                 return "Autorizado";
             } else {

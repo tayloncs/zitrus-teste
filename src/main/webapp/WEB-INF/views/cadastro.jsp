@@ -39,11 +39,11 @@
         </select>
       </div>
       <div class='input-container'>
-        <label for="isPermitir">Permitir</label>
-        <select id="isPermitir" name="isPermitir" required>
+        <label for="isAutorizado">Permitir</label>
+        <select id="isAutorizado" name="isAutorizado" required>
           <option value="">Selecione</option>
-          <option value="true">Sim</option>
-          <option value="false">Não</option>
+          <option value="TRUE">Sim</option>
+          <option value="FALSE">Não</option>
         </select>
       </div>
       <div class='btn-container'>
