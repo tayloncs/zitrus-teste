@@ -1,0 +1,6 @@
+changeLogFile: src/main/resources/db.changelog/db.changelog-master.yaml
+driver: com.mysql.cj.jdbc.Driver
+url: jdbc:mysql://localhost:3307/zitrus
+username: root
+password: root
+contexts: local
