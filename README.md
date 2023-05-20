@@ -22,7 +22,7 @@ Necessario Docker, Tomcat7 instalado
 Entre no diretorio do projeto
 
 ```bash
-  cd zitrus
+  cd zitrus-teste
 ```
 
 Na raiz do projeto executar Docker no arquivo docker-compose.yml para criar um banco de dados MySql
